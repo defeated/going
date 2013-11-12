@@ -1,23 +1,15 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"regexp"
+	"github.com/defeated/going/reader"
 )
 
-type Data struct {
-	Paths []string
-}
-
 func main() {
+	lines := reader.Read("data.json")
 	matcher := regexp.MustCompile("(?i).*w.*")
 	matches := []string{}
-
-	var d Data
-	f, _ := ioutil.ReadFile("data.json")
-	json.Unmarshal(f, &d)
 
 	for _, dir := range d.Paths {
 		match := matcher.MatchString(dir)
