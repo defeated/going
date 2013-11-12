@@ -11,8 +11,10 @@ func main() {
 		"bbb",
 	}
 
+	matcher := regexp.MustCompile("(?i).*b.*")
+
 	for _, dir := range dirs {
-		match, _ := regexp.MatchString("(?i).*b.*", dir)
+		match := matcher.MatchString(dir)
 
 		if match {
 			fmt.Println(dir)
