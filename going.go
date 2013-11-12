@@ -1,23 +1,30 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"regexp"
 )
 
+type Data struct {
+	Paths []string
+}
+
 func main() {
-	dirs := []string{
-		"aaa",
-		"bbb",
-	}
+	matcher := regexp.MustCompile("(?i).*w.*")
+	matches := []string{}
 
-	matcher := regexp.MustCompile("(?i).*b.*")
+	var d Data
+	f, _ := ioutil.ReadFile("data.json")
+	json.Unmarshal(f, &d)
 
-	for _, dir := range dirs {
+	for _, dir := range d.Paths {
 		match := matcher.MatchString(dir)
-
 		if match {
-			fmt.Println(dir)
+			matches = append(matches, dir)
 		}
 	}
+
+	fmt.Println(matches)
 }
