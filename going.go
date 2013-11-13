@@ -11,5 +11,7 @@ func main() {
 	lines := reader.Read("data.json")
 	input := os.Args[1]
 	matches := matcher.Match(input, lines)
-	fmt.Println(matches)
+	directory := matches[0]
+
+	fmt.Println(directory)
 }
