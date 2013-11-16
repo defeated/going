@@ -15,7 +15,7 @@ func fuzzify(input string) string {
 
 func Match(input string, list []string) []string {
 	pattern := regexp.MustCompile("(?i)" + fuzzify(input))
-	matches := new([]string)
+	matches := []string{}
 
 	for _, dir := range list {
 		match := pattern.MatchString(dir)
