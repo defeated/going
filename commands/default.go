@@ -9,7 +9,9 @@ import (
 func CmdDefault(input string, filename string) {
 	lines := reader.Read(filename)
 	matches := matcher.Match(input, lines)
-	directory := matches[0]
 
-	fmt.Println(directory)
+	if len(matches) > 0 {
+		directory := matches[0]
+		fmt.Println(directory)
+	}
 }
