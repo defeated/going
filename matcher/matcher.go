@@ -15,10 +15,10 @@ func Match(input string, list []string) []string {
 	pattern := regexp.MustCompile("(?i)" + fuzzify(input))
 	matches := []string{}
 
-	for _, dir := range list {
-		match := pattern.MatchString(dir)
+	for _, item := range list {
+		match := pattern.MatchString(item)
 		if match {
-			matches = append(matches, dir)
+			matches = append(matches, item)
 		}
 	}
 
