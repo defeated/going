@@ -1,6 +1,6 @@
 g() {
   local dir=$(./going "$@")
-  cd $dir
+  cd "$dir"
 }
 
 __g_track_pwd() {
