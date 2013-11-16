@@ -1,9 +1,9 @@
 package commands
 
 import (
-	"../matcher"
-	"../reader"
 	"fmt"
+	"github.com/defeated/going/matcher"
+	"github.com/defeated/going/reader"
 )
 
 func CmdDefault(input string, filename string) {

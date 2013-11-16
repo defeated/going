@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./commands"
+	"github.com/defeated/going/commands"
 	"os"
 )
 
