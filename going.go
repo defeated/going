@@ -1,17 +1,15 @@
 package main
 
 import (
-	"fmt"
-	"github.com/defeated/going/matcher"
-	"github.com/defeated/going/reader"
+	"./commands"
 	"os"
 )
 
 func main() {
-	lines := reader.Read("data.json")
-	input := os.Args[1]
-	matches := matcher.Match(input, lines)
-	directory := matches[0]
-
-	fmt.Println(directory)
+	cmd := os.Args[1]
+	if cmd == "--add" {
+		commands.CmdAdd()
+	} else {
+		commands.CmdDefault(cmd, "data.json")
+	}
 }
