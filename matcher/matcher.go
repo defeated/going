@@ -7,7 +7,7 @@ import (
 
 func fuzzify(input string) string {
 	chars := strings.Split(input, "")
-	fuzzy := ".*" + strings.Join(chars, ".*")
+	fuzzy := ".*" + strings.Join(chars, ".*") + ".*"
 	return fuzzy
 }
 
