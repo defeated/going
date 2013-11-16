@@ -1,4 +1,4 @@
-package reader
+package storage
 
 import (
 	"encoding/json"

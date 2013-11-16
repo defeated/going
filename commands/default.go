@@ -3,11 +3,11 @@ package commands
 import (
 	"fmt"
 	"github.com/defeated/going/matcher"
-	"github.com/defeated/going/reader"
+	"github.com/defeated/going/storage"
 )
 
 func CmdDefault(input string, filename string) {
-	lines := reader.Read(filename)
+	lines := storage.Read(filename)
 	matches := matcher.Match(input, lines)
 
 	if len(matches) > 0 {
