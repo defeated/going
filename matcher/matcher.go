@@ -1,7 +1,6 @@
 package matcher
 
 import (
-	"fmt"
 	"regexp"
 	"strings"
 )
@@ -9,7 +8,6 @@ import (
 func fuzzify(input string) string {
 	chars := strings.Split(input, "")
 	fuzzy := ".*" + strings.Join(chars, ".*")
-	fmt.Println(fuzzy)
 	return fuzzy
 }
 
