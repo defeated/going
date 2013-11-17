@@ -9,12 +9,13 @@ import (
 func main() {
 	stor := storage.NewStorage(os.Getenv("HOME") + "/.going/data.json")
 	cmd := os.Args[1]
-	if cmd == "--add" {
+	switch cmd {
+	default:
+		commands.CmdDefault(stor, cmd)
+	case "--add":
 		path := os.Args[2]
 		commands.CmdAdd(stor, path)
-	} else if cmd == "--prune" {
+	case "--prune":
 		commands.CmdPrune(stor)
-	} else {
-		commands.CmdDefault(stor, cmd)
 	}
 }
