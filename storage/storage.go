@@ -11,9 +11,11 @@ type Path struct {
 	First time.Time
 }
 
+type Paths map[string]Path
+
 type Storage struct {
 	Filename string
-	Paths    map[string]Path
+	Paths    Paths
 }
 
 func NewStorage(filename string) *Storage {

@@ -7,14 +7,18 @@ import (
 )
 
 func CmdDefault(input string, stor *storage.Storage) {
-	keys := make([]string, 0, len(stor.Paths))
-	for k := range stor.Paths {
-		keys = append(keys, k)
-	}
-	find(input, keys)
+	findMatch(input, getKeys(stor.Paths))
 }
 
-func find(input string, items []string) {
+func getKeys(hash storage.Paths) []string {
+	keys := make([]string, 0, len(hash))
+	for k := range hash {
+		keys = append(keys, k)
+	}
+	return keys
+}
+
+func findMatch(input string, items []string) {
 	matches := matcher.Match(input, items)
 	if len(matches) > 0 {
 		directory := matches[0]
