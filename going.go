@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	stor := storage.NewStorage("data.json")
+	stor := storage.NewStorage(os.Getenv("HOME") + "/.going/data.json")
 	cmd := os.Args[1]
 	if cmd == "--add" {
 		path := os.Args[2]

@@ -3,6 +3,8 @@ package storage
 import (
 	"encoding/json"
 	"io/ioutil"
+	"os"
+	"path"
 	"time"
 )
 
@@ -20,6 +22,8 @@ type Storage struct {
 
 func NewStorage(filename string) *Storage {
 	s := &Storage{Filename: filename}
+	setup(filename)
+
 	s.Read()
 	return s
 }
@@ -32,4 +36,9 @@ func (s *Storage) Read() {
 func (s *Storage) Write() {
 	j, _ := json.Marshal(s.Paths)
 	ioutil.WriteFile(s.Filename, j, 0666)
+}
+
+func setup(filename string) {
+	dir := path.Dir(filename)
+	os.MkdirAll(dir, 0700)
 }
