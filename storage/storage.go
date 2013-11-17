@@ -21,9 +21,9 @@ type Storage struct {
 }
 
 func NewStorage(filename string) *Storage {
-	s := &Storage{Filename: filename}
 	setup(filename)
 
+	s := &Storage{filename, make(Paths)}
 	s.Read()
 	return s
 }
