@@ -1,1 +1,14 @@
-{"/Users/defeated/Desktop":{"Hits":1,"First":"2013-01-05T12:30:10.630200044Z"},"/Users/defeated/Documents":{"Hits":100,"First":"2013-10-31T22:59:11.630200044Z"},"/Users/defeated/Dropbox":{"Hits":12,"First":"2013-11-17T01:41:07.129251531Z"}}
+{
+  "/Users/defeated/Desktop": {
+    "Hits": 1,
+    "First": "2013-01-05T12:30:10.630200044Z"
+  },
+  "/Users/defeated/Documents": {
+    "Hits": 100,
+    "First": "2013-10-31T22:59:11.630200044Z"
+  },
+  "/Users/defeated/Dropbox": {
+    "Hits": 12,
+    "First": "2013-11-17T01:41:07.129251531Z"
+  }
+}
