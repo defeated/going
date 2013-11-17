@@ -38,6 +38,10 @@ func (s *Storage) Write() {
 	ioutil.WriteFile(s.Filename, j, 0666)
 }
 
+func (s *Storage) Delete() {
+	os.Remove(s.Filename)
+}
+
 func setup(filename string) {
 	dir := path.Dir(filename)
 	os.MkdirAll(dir, 0700)

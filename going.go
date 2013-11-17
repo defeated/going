@@ -12,6 +12,8 @@ func main() {
 	if cmd == "--add" {
 		path := os.Args[2]
 		commands.CmdAdd(stor, path)
+	} else if cmd == "--prune" {
+		commands.CmdPrune(stor)
 	} else {
 		commands.CmdDefault(stor, cmd)
 	}
