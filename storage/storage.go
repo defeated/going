@@ -3,15 +3,31 @@ package storage
 import (
 	"encoding/json"
 	"io/ioutil"
+	"time"
 )
 
-type Data struct {
-	Paths []string
+type Path struct {
+	Hits  uint16
+	First time.Time
 }
 
-func Read(filename string) []string {
-	var d Data
-	f, _ := ioutil.ReadFile(filename)
-	json.Unmarshal(f, &d)
-	return d.Paths
+type Storage struct {
+	Filename string
+	Paths    map[string]Path
+}
+
+func NewStorage(filename string) *Storage {
+	s := &Storage{Filename: filename}
+	s.Read()
+	return s
+}
+
+func (s *Storage) Read() {
+	f, _ := ioutil.ReadFile(s.Filename)
+	json.Unmarshal(f, &s.Paths)
+}
+
+func (s *Storage) Write() {
+	j, _ := json.Marshal(s.Paths)
+	ioutil.WriteFile(s.Filename, j, 0666)
 }
