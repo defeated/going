@@ -5,7 +5,7 @@ g() {
 
 __g_track_pwd() {
   if [ "$__G_LAST_PWD" != "$PWD" ]; then
-    echo $PWD
+    ./going --add "$PWD"
     __G_LAST_PWD=$PWD
   fi
 }

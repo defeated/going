@@ -10,7 +10,8 @@ func main() {
 	stor := storage.NewStorage("data.json")
 	cmd := os.Args[1]
 	if cmd == "--add" {
-		commands.CmdAdd()
+		path := os.Args[2]
+		commands.CmdAdd(stor, path)
 	} else {
 		commands.CmdDefault(stor, cmd)
 	}
