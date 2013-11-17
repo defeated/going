@@ -6,7 +6,7 @@ import (
 	"github.com/defeated/going/storage"
 )
 
-func CmdDefault(input string, stor *storage.Storage) {
+func CmdDefault(stor *storage.Storage, input string) {
 	findMatch(input, getKeys(stor.Paths))
 }
 

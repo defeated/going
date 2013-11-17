@@ -12,6 +12,6 @@ func main() {
 	if cmd == "--add" {
 		commands.CmdAdd()
 	} else {
-		commands.CmdDefault(cmd, stor)
+		commands.CmdDefault(stor, cmd)
 	}
 }
